@@ -11,18 +11,13 @@ import com.google.android.material.textfield.TextInputEditText;
 public class TaskDbHelper extends SQLiteOpenHelper {
 
     public TaskDbHelper(Context context) {
-        super(context, TaskContract.DB_NAME, null, TaskContract.DB_VERSION);
+        super(context, "com.example.todolist.db", null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTable = "CREATE TABLE " + TaskContract.TaskEntry.TABLE + " ( " +
-                TaskContract.TaskEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                TaskContract.TaskEntry.COL_TASK_TITLE + " TEXT NOT NULL);";
-
-
-        db.execSQL(createTable);
         db.execSQL("CREATE TABLE ACCOUNTS (NAME TEXT PRIMARY KEY NOT NULL, PASSWORD TEXT NOT NULL)");
+        db.execSQL("CREATE TABLE TASKS (ID INTEGER PRIMARY KEY AUTOINCREMENT,TASK TEXT NOT NULL, NAME TEXT)");
     }
 
     @Override
@@ -51,6 +46,40 @@ public class TaskDbHelper extends SQLiteOpenHelper {
         contentValues.put("NAME", account);
         contentValues.put("PASSWORD", password);
         db.insert("ACCOUNTS", null, contentValues);
+        db.close();
+    }
+
+    public void addTask(String task, String user) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("TASK", task);
+        contentValues.put("NAME",user);
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.insert("TASKS", null, contentValues);
+        db.close();
+    }
+
+    public String[] getTasks(String user){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor= db.rawQuery("SELECT * FROM TASKS WHERE NAME=?",new String[]{user});
+        int regs = cursor.getCount();
+        if(regs ==0){
+            db.close();
+            return null;
+        }else{
+            String[] tareas = new String[regs];
+            cursor.moveToFirst();
+            for(int i=0;i<regs;i++){
+                tareas[i] = cursor.getString(1);
+                cursor.moveToNext();
+            }
+            db.close();
+            return tareas;
+        }
+    }
+
+    public void deleteTask(String task, String user) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete("TASKS", "TASK=? AND Name=?",new String[]{task, user});
         db.close();
     }
 }
