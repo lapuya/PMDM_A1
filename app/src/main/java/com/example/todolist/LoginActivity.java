@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,6 +21,8 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText name,pass;
     TaskDbHelper db;
+    VideoView background;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

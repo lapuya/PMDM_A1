@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/custom_edit_text_round.xml" value="0.19739583333333333" />
+        <entry key="app/src/main/res/drawable/custom_input.xml" value="0.19739583333333333" />
+        <entry key="app/src/main/res/drawable/custom_lock_icon.xml" value="0.19739583333333333" />
+        <entry key="app/src/main/res/drawable/custom_style.xml" value="0.19739583333333333" />
+        <entry key="app/src/main/res/drawable/custom_user_icon.xml" value="0.19739583333333333" />
+        <entry key="app/src/main/res/drawable/ic_lock.xml" value="0.19739583333333333" />
+        <entry key="app/src/main/res/drawable/ic_lock_focused.xml" value="0.19739583333333333" />
+        <entry key="app/src/main/res/drawable/ic_user_focused.xml" value="0.19739583333333333" />
         <entry key="app/src/main/res/drawable/logo_todolist_background.xml" value="0.196875" />
         <entry key="app/src/main/res/drawable/splash_screen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
@@ -12,6 +20,7 @@
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.196875" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/logo_todolist.xml" value="0.196875" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/logo_todolist_round.xml" value="0.19739583333333333" />
       </map>
     </option>
   </component>
