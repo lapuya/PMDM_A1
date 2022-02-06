@@ -3,9 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/logo_todolist_background.xml" value="0.196875" />
+        <entry key="app/src/main/res/drawable/splash_screen.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17708333333333334" />
         <entry key="app/src/main/res/layout/item_todo.xml" value="0.17708333333333334" />
+        <entry key="app/src/main/res/layout/login_activity.xml" value="0.18125" />
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.18072916666666666" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.196875" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/logo_todolist.xml" value="0.196875" />
       </map>
     </option>
   </component>
