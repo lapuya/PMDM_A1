@@ -15,6 +15,7 @@
         <entry key="app/src/main/res/drawable/ic_user_focused.xml" value="0.19739583333333333" />
         <entry key="app/src/main/res/drawable/logo_todolist_background.xml" value="0.196875" />
         <entry key="app/src/main/res/drawable/splash_screen.xml" value="0.25" />
+        <entry key="app/src/main/res/drawable/video.xml" value="0.196875" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17708333333333334" />
         <entry key="app/src/main/res/layout/item_todo.xml" value="0.17708333333333334" />
