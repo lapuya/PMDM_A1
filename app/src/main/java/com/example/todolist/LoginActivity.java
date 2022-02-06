@@ -21,8 +21,6 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText name,pass;
     TaskDbHelper db;
-    VideoView background;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +32,11 @@ public class LoginActivity extends AppCompatActivity {
         setTheme(R.style.Theme_TodoList);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        Objects.requireNonNull(getSupportActionBar()).hide();
         name = (EditText)findViewById(R.id.username);
         pass = (EditText)findViewById(R.id.password);
         db = new TaskDbHelper(this);
     }
-
 
     public void login(View view){
         String account = name.getText().toString();
@@ -73,6 +71,4 @@ public class LoginActivity extends AppCompatActivity {
             toast.show();
         }
     }
-
-
 }
