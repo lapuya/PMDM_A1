@@ -82,4 +82,13 @@ public class TaskDbHelper extends SQLiteOpenHelper {
         db.delete("TASKS", "TASK=? AND Name=?",new String[]{task, user});
         db.close();
     }
+
+
+    public void renameTask(String originalTask, String newTask) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("TASK", newTask);
+        db.update("TASKS",contentValues,"TASK=?",new String[]{originalTask});
+        db.close();
+    }
 }

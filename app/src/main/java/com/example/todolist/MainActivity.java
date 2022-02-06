@@ -87,6 +87,32 @@ public class MainActivity extends AppCompatActivity {
         updateUI();
     }
 
+    public void editTask(View view){
+        View parent = (View) view.getParent();
+        TextView taskView = (TextView) parent.findViewById(R.id.task_title);
+        String originalTask = taskView.getText().toString();
+        EditText textBox = new EditText(this);
+        AlertDialog dialog = new AlertDialog.Builder(this)
+                .setTitle("Rename Task")
+                .setMessage("Type the new task")
+                .setView(textBox)
+                .setPositiveButton("Rename",new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String newTask = textBox.getText().toString();
+                        mHelper.renameTask(originalTask,newTask);
+                        Toast toast = Toast.makeText(getApplicationContext(),
+                                "Task modified succesfully",Toast.LENGTH_LONG);
+                        toast.show();
+                        updateUI();
+
+                    }
+                })
+                .setNegativeButton("Cancelar",null)
+                .create();
+        dialog.show();
+    }
+
 
     private void updateUI() {
         try {
